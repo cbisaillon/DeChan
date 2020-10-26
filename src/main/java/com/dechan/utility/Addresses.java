@@ -1,14 +1,13 @@
 package com.dechan.utility;
 
-import org.iota.jota.IotaAPI;
 import org.iota.jota.builder.AddressRequest;
 import org.iota.jota.dto.response.GetNewAddressResponse;
 import org.iota.jota.error.ArgumentException;
 
 public class Addresses {
-    public static String generateAddress(IotaAPI api, String seed){
+    public static String generateAddress(String seed){
         try{
-            GetNewAddressResponse response = api.generateNewAddresses(
+            GetNewAddressResponse response = Iota.api.generateNewAddresses(
                     new AddressRequest.Builder(seed, 2).amount(1).checksum(true).build()
             );
 
