@@ -7,6 +7,24 @@
     <groupId>com.dechan</groupId>
     <artifactId>DeChan</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
+
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.iota/jota -->
@@ -14,6 +32,13 @@
             <groupId>org.iota</groupId>
             <artifactId>jota</artifactId>
             <version>1.0.0-beta9</version>
+        </dependency>
+
+        <!-- For base64 encoding/decoding of images -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
         </dependency>
 
     </dependencies>

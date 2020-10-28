@@ -13,7 +13,7 @@ public class Iota {
 
     public static IotaAPI api = new IotaAPI.Builder()
             .protocol("https")
-            .host("nodes.devnet.iota.org")
+            .host("nodes.thetangle.org")
             .port(443)
             .build();
 
@@ -43,7 +43,7 @@ public class Iota {
         transfers.add(transfer);
 
         try{
-            SendTransferResponse response = api.sendTransfer(seed, 2, 3, 9, transfers, null, null, false, false, null);
+            SendTransferResponse response = api.sendTransfer(seed, 2, 3, 14, transfers, null, null, false, false, null);
             return response.getTransactions().get(0);
         }catch (ArgumentException e){
             System.err.println("Failed to send message: " + e.getMessage());
